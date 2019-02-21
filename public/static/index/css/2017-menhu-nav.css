@@ -1,0 +1,89 @@
+
+/**
+ * 网站顶部-网站导航独立样式
+ */
+.web:hover #nav_navigation_temp {
+  display: block;
+}
+#nav_navigation_temp {
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    left: -1px;
+    top: 39px;
+    width: 1200px;
+    border: 1px solid #e3e3e3;
+    border-top: 0;
+    background-color: #fff;
+}
+#nav_navigation_temp a {
+    color: #333;
+}
+    
+.sm_navigation {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  padding: 16px  16px 20px;
+  border: 1px solid #e3e3e3;
+}
+.navigation_item {
+  border-right: 1px dashed #adadad;
+  float: left;
+  margin-right: 20px;
+  max-width: 216px;
+  /*max-height: 340px;*/
+}
+#new_sm_navigation a {
+  padding: 0px;
+  line-height: 24px;
+}
+#new_sm_navigation a:hover {
+  background: none;
+  color: #ee571d;
+  box-shadow: none;
+}
+#new_sm_navigation .navigation_item_header a {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px;
+}
+#new_sm_navigation .navigation_item_header a i {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  top: 5px;
+  margin-right: 10px;
+  position: relative;
+}
+#new_sm_navigation .navigation_item_content {
+  padding-top: 8px;
+  padding-left: 24px;
+}
+#new_sm_navigation .navigation_item_content dt a {
+  font-weight: bold;
+}
+#new_sm_navigation .navigation_item_content dd {
+  overflow: hidden;
+}
+#new_sm_navigation .navigation_item_content dd a {
+  display: inline-block;
+  padding: 0px 10px;
+  overflow: hidden;
+}
+.navigation_zmfh_icon {
+  background: url(../images/2017-nav-icon.png) 0px 0px;
+}
+.navigation_wsbs_icon {
+  background: url(../images/2017-nav-icon.png) -24px 0px;
+}
+.navigation_qypt_icon {
+  background: url(../images/2017-nav-icon.png) -124px 0px;
+}
+.navigation_smzx_icon {
+  background: url(../images/2017-nav-icon.png) -48px 0px;
+}
+.navigation_eht_icon {
+  background: url(../images/2017-nav-icon.png) -72px 0px;
+}

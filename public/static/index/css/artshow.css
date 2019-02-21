@@ -1,0 +1,37 @@
+.title{line-height:35px;height:35px;margin:0 0 15px 0;text-indent: 15px;}
+
+.title h1{
+	font-size: 18px;
+	font-family: microsoft yahei;
+	text-align: center;
+	font-weight: normal;
+	margin: 0;
+}
+
+.item{color:#999;text-align:center;margin:20px 0;font-family:arial;border-bottom:1px solid #f0f0f0;padding:0 0 15px 0;}
+
+.content{word-break:break-all;line-height:22px;}
+
+.content p{margin:15px 0;font-size:14px;}
+
+.content img{max-width:590px;}
+
+.content .list_page{line-height:normal;}
+
+.pre,.next{line-height:30px;height:30px;}
+
+.infodot{border-top:1px dashed #ccc;margin:15px 0;}
+.wbt{border-top:2px solid #ae0000;}
+.wbt .content{padding:20px 30px;overflow:hidden;border-left:1px solid #ccc; border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
+.wbt .content .photo{float:left;width:160px;height:300px}
+.wbt .content .photo img{width:140px;}
+.wbt .content .photo p{text-align:center;margin:0;}
+.wbt .content .info{float:left;width:700px;margin-left:0px;border:1px solid #ccc;margin-top:0px;}
+.wbt .content .wy{float:left;width:700px;}
+.wbt .title{margin-bottom:0;border-right:1px solid #ccc;border-left:1px solid #ccc;width:auto;}
+.wbt .title h1{text-align:left;}
+#sbcms_content{
+	float:left;width:700px;margin-left:100px;
+	border:1px solid #ccc;
+	margin:0px 0;
+}

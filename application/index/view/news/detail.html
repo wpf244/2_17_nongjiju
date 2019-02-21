@@ -1,0 +1,127 @@
+﻿      <!DOCTYPE html>
+        <html>
+        <head>
+        
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="Keywords" content="" />
+            <meta name="Description" content="" />
+            <title>{$sites.sitename}门户网站-{$info.title}</title>
+            <link href="__HOME__/css/base.css" rel="stylesheet" type="text/css" />
+            <link rel="stylesheet" href="__HOME__/css/hngov.css" type="text/css" />
+            <link href="__HOME__/css/public.css" rel="stylesheet" type="text/css" />
+        
+            <link href="__HOME__/css/artlist.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/artshow.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/pages.css" rel="stylesheet" type="text/css" />
+            <!-- <script>
+                var webroot = "/",
+                    murl = "list.asp?classid=1";
+            </script> -->
+        
+            <script src="__HOME__/js/jquery.js"></script>
+        
+        
+        
+            <script src="__HOME__/js/base.js"></script>
+        
+
+        
+            <script src="__HOME__/js/zh_CN.js"></script>
+        
+            <script src="__HOME__/js/sdcms.js"></script>
+        
+            <script src="__HOME__/js/main.js"></script>
+        
+        
+            <!-- @RenderSection("styles", required: false) -->
+        </head>
+        <body>
+        
+                <div class="wrapper wrapTop">
+                       
+                    {include file="public:top"}
+                       </div>
+                   
+                       {include file="public:navs"}
+                   
+        
+                   <div id="position">
+                        您所在的位置：
+                        <a href="{:url('Index/index')}">首页</a> >
+                        <a href="{:url('News/index',array('id'=>$re['id']))}">{$re.name}</a> >
+                        <a href="javascript:;" title="{$info.title}">{$info.title}</a>
+                    </div>
+                    
+                    <div class="w980 mt10 mc" id="container">
+                    
+                        <div class="right" style="width:1000px">
+                            <div class="w610 bt" style="width:auto">
+                                <div class="title">
+                                    <h1>{$info.title}</h1>
+                                    <small>{$info.subtitle}</small>
+                                </div>
+                    
+                                <div class="item">
+                                    来源：{$info.source} 　日期：{$info.createtime|mb_substr=0,10,'utf-8'}　人气：<span id="hits">{$info.clicks}</span>
+                                </div>
+                    
+                                <div class="content">
+                    
+                                    <div id="sdcms_content">
+                                        {$content.content}
+                                        
+                    
+                                    </div>
+                    
+                                    <div class="list_page"></div>
+                    
+                                    <div class="show-btn">
+                                        <span onclick="window.print();">打印此文</span>
+                                        <span onclick="window.close()">关闭窗口</span>
+                                    </div>
+                    
+                                </div>
+                    
+                                <div class="infodot"></div>
+                    
+                                <div class="pre">
+                                    
+                                      
+                                   {if condition="$pre.id neq ''"}
+                                        <strong>上一篇：</strong>
+                                        <a href="{:url('News/detail',array('nid'=>$pre['id']))}" Title="{$pre.title}">{$pre.title}</a>
+                                    }
+                                    {else /}
+                    
+                                    <strong>上一篇：没有资料</strong>
+                                    {/if}
+                                    
+                    
+                                </div>
+                                {if condition="$nre.id neq ''"}
+                                    <strong>下一篇：</strong>
+                                    <a href="{:url('News/detail',array('nid'=>$nre['id']))}" Title="{$nre.title}">{$nre.title}</a>
+                                    {else /}
+                                <strong>下一篇：没有资料</strong> 
+                                {/if}
+                                
+                    
+                            </div>
+                    
+                            
+                    
+                        </div>
+                    
+                        
+                    
+                    </div>
+                    
+                    <script>
+                                window.highlight && highlight();
+                    </script>
+        
+            {include file="public:footer"}
+          
+        </body>
+        </html>
+        

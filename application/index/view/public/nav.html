@@ -1,0 +1,30 @@
+<div class="hd" style="border-bottom: 2px solid {$banner.color};background: {$banner.color};">
+    <ul class='tablist'>
+        {volist name="site" id="v" key="k"}
+     
+            {if condition="$k eq 1"}
+            
+                <li class="tab{$k}">
+                    <a style="width:100%;" href="{:url('Index/index')}">{$v.name}</a>
+                </li>
+                {elseif condition="$v['name'] eq '互动交流' " }
+                <li>
+                     <a style="width:100%;" href="{:url('News/msg')}" target="_blank" class="a">{$v['name']}</a>
+                 </li>
+            {else /}
+            
+                <li class="tab{$k}">
+                    <a style="width:100%;" href="{:url('News/index',array('id'=>$v['id']))}" >{$v.name}</a>
+                </li>
+            {/if}
+
+       {/volist}
+       
+      
+    </ul>
+</div>
+<style>
+        .menu li a:hover{
+           background: {$banner.colors}
+        }
+        </style>

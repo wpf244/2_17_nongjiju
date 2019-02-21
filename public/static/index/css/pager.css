@@ -1,0 +1,39 @@
+.paginator {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; font: 14px Arial,Helvetica,sans-serif; color: #666; float:right;
+}
+ 
+.paginator A {
+	border-right: #c4c4c4 1px solid; padding-right:8px; border-top: #c4c4c4 1px solid; display: block; padding-left: 8px; background: #fff; float: left; border-left: #c4c4c4 1px solid; color: #0169cd; margin-right: 4px; border-bottom: #c4c4c4 1px solid; text-decoration: none; height:20px; line-height:20px;
+}
+.paginator A:link {
+	border-right: #c4c4c4 1px solid; padding-right:8px; border-top: #c4c4c4 1px solid; display: block; padding-left: 8px; background: #fff; float: left;  border-left: #c4c4c4 1px solid; color: #0169cd; margin-right: 4px; border-bottom: #c4c4c4 1px solid; text-decoration: none; height:20px; line-height:20px;
+}
+.paginator A:visited {
+	border-right: #c4c4c4 1px solid;  padding-right: 8px; border-top: #c4c4c4 1px solid; padding-left: 8px; background: #fff; border-left: #c4c4c4 1px solid; color: #0169cd; border-bottom: #c4c4c4 1px solid; text-decoration: none; height:20px; line-height:20px;
+}
+.paginator A:hover {
+	border-right: #fe7300 1px solid; padding-right: 8px; border-top: #fe7300 1px solid; padding-left: 8px; background: #fff; border-left: #fe7300 1px solid; color:#fe7300; border-bottom: #fe7300 1px solid; text-decoration: none; height:20px; line-height:20px;
+}
+.paginator A:active {
+	border-right: #fe7300 1px solid; padding-right: 8px; border-top: #fe7300 1px solid; padding-left: 8px; background: #fff; border-left: #fe7300 1px solid; color:#fe7300;  border-bottom: #a62021 1px solid; text-decoration: none; height:20px; line-height:20px;
+}
+.paginator .break {
+	padding-right: 6px; padding-left: 6px; padding-bottom: 6px; border-top-style: none; padding-top: 6px; border-right-style: none; border-left-style: none; height: 12px; text-decoration: none; border-bottom-style: none;
+}
+ 
+.paginator .this-page {
+	border-right: #fff 1px solid; padding-right: 8px; border-top: #fff 1px solid; display: block; padding-left: 8px; background: #fff; float: left; padding-bottom: 2px; border-left: #fff 1px solid; margin-right: 2px; padding-top: 2px; border-bottom: #fff 1px solid; text-decoration: none; color:#fe7300; font-weight:bold;
+}
+ 
+ 
+/*当为第一页时的上一页按钮*/
+.firstbtn {
+	border-top-width: 0px! important; padding-right: 0px; padding-left: 0px; border-left-width: 0px! important; font-size: 12px; background: url(pager/lastpage-meneame.gif) no-repeat; border-bottom-width: 0px! important; padding-bottom: 0px; width: 26px; color: #666; line-height: 22px; margin-right: 4px; padding-top: 0px; height: 22px; text-align: left; border-right-width: 0px! important;
+}
+
+/*当为最后一页时的下一页按钮*/
+.finalbtn {
+	border-top-width: 0px! important; padding-right: 0px; padding-left: 0px; border-left-width: 0px! important; font-size: 12px; background: url(pager/last_btn.gif) no-repeat; border-bottom-width: 0px! important; padding-bottom: 0px; width: 63px; color: #666; text-indent: 7px; line-height: 22px; padding-top: 0px; height: 22px; text-align: left; border-right-width: 0px! important;
+}
+
+.firstbg, .firstbg a, .firstbg a:link, .firstbg a:visited, .firstbg a:hover{ font-size:12px; color:#999; height:20px; line-height:20px; display:block;}

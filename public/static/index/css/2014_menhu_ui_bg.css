@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+.ui-bg {}
+.ui-bg ul { position:absolute; left:0px;  top:0px; width:100%; height:100%; min-height:850px; z-index:-1;}
+.ui-bg li { position:absolute; left:0px;  top:0px; width:100%; height:100%; display:none; min-height:850px;}
+.ui-bg-li0 { background:#fff url(../images/W020141119585220990191.jpg) no-repeat center top;}
+.ui-bg-li1 { background:#fff url(../images/W020141119585490406772.jpg) no-repeat center top;}
+.ui-bg-li2 { background:#fff url(../images/W020141119585784620148.jpg) no-repeat center top;}
+.ui-bg-li3 { background:#fff url(../images/W020141119583675187212.jpg) no-repeat center top;}
+.ui-bg-li4 { background:#fff url(../images/W020141119583921519480.jpg) no-repeat center top;}
+.ui-bg-li5 { background:#fff url(../images/W020170110340484539670.jpg) no-repeat center top;}

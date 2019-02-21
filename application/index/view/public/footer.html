@@ -1,0 +1,101 @@
+﻿
+<div class="link-bottom">
+    {volist name="footer_link" id="link"}
+        <div class="ui-drop">
+            <div class="ui-drop-hd">
+                <p>{$link.title}</p>
+            </div>
+            <div class="ui-drop-sub">
+                <ul>
+                        {volist name="link['list']" id="links"}
+                        <li>
+                            <a target="_blank" href="{$links.url}">{$links.title}</a>
+                        </li>
+                        {/volist}
+
+                </ul>
+            </div>
+        </div>
+          {/volist}
+
+
+</div>
+<div class="con5">
+
+    <div class="wrapper dcon5">
+
+        <table width="1000" border="0" cellspacing="0" cellpadding="0">
+
+            <tbody>
+
+                <tr>
+
+                    <td width="104" align="center">
+                            
+                        <script id="_jiucuo_" sitecode="{$sites.dang}" sitesrc="__HOME__/images/jiucuo.png" src='__HOME__/js/jiucuo.js'></script>
+
+                    </td>
+
+                    <td width="557" style="position: relative;left: 140px;">
+
+                        <table width="531" border="0" cellspacing="0" cellpadding="0">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td height="5px"></td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <P>Copyright© All rights reserved主办：{$sites.sitename}&nbsp;&nbsp;</P>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <p>
+                                            <a >
+
+                                                豫ICP备{$sites.icp}
+                                            </a>&nbsp; <img border="0" src="__HOME__/images/ga.png" width="20" height="20">
+                                            <a target="_blank">豫公网安备 {$sites.gongan}</a>
+                                        </p>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </td>
+                    <td width="181" style="text-align: right;">
+                        <script type="text/javascript">
+                            document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/17/266/0000/60281352/CA172660000602813520000.js' type='text/javascript'%3E%3C/script%3E"));
+                        </script>
+                    </td>
+                    <!--<td width="159">　</td>-->
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{if condition="$other.pstatus eq 1"}
+                        
+<div id="fixed" style="background-image:url(/uploads/{$other.pimage}" onclick="location.href='{$other.purl}'">
+
+</div>
+{/if}

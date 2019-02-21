@@ -1,0 +1,731 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$sites.sitename}门户网站</title>
+    <LINK href="__HOME__/css/c_reset_n.css" type=text/css rel=stylesheet>
+    <link href="__HOME__/css/hngov.css" rel="stylesheet" type="text/css" />
+    <link href="__HOME__/css/focus.css" rel="stylesheet" type="text/css" />
+    <link href="__HOME__/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__HOME__/css/swiper.min.css" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="__HOME__/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__HOME__/js/main.js"></script>
+
+    <style type="text/css">
+        /*固定飘窗*/
+        #fixed {
+            position: fixed;
+            right: 0;
+            bottom: 200px;
+            width: 82px;
+            height: 205px;
+            background: url(__HOME__/images/ewm.jpg) no-repeat;
+        }
+        .loading {
+            width: 450px;
+            height: 280px;
+        }
+
+            .loading img {
+                margin-top: 120px;
+                margin-left: 200px;
+            }
+
+        body,
+        td,
+        th {
+            font-family: "宋体", "新宋体", \5b8b\4f53;
+        }
+
+        #myFocus {
+            width: 450px;
+            height: 280px;
+            background: #efefef;
+        }
+
+        .govpushinfo150203 {
+            width: 380px;
+            height: 240px;
+            overflow: hidden;
+        }
+
+            .govpushinfo150203 li {
+                width: 370px;
+                list-style: none;
+                height: 29px;
+                line-height: 29px;
+                background: url(__HOME__/images/tit_bg1.jpg) 0px 12px no-repeat;
+                margin-left: 0px;
+                padding-left: 12px;
+                font-size: 14px;
+                font-family: "宋体";
+                border-bottom: #CCC 1px dashed;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+                .govpushinfo150203 li a {
+                    text-decoration: none;
+                    color: #000;
+                    width: 370px;
+                    display: block;
+                    overflow: hidden;
+                    float: left;
+                    text-overflow: ellipsis;
+                }
+
+                    .govpushinfo150203 li a:hover {
+                        color: #000;
+                        text-decoration: none;
+                    }
+
+                .govpushinfo150203 li span {
+                    display: none;
+                }
+
+        .wrapTop {
+            width: 100%;
+        }
+
+            .wrapTop img {
+                width: 100%;
+            }
+
+        .swiper-container {
+            width: 450px;
+            height: 280px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            position: relative;
+        }
+
+            .swiper-slide img {
+                width: 100%;
+            }
+
+            .swiper-slide p {
+                position: absolute;
+				width:100%;
+				height:20px;
+				line-height:20px;
+                bottom: 0px;
+                left: 0px;
+                font-size: 14px;
+				background:rgba(0,0,0,0.5);
+            }
+			.swiper-slide p a{
+			color: #fff;
+			text-decoration:none;
+				text-align:center;
+			}
+			
+			.swiper-pagination{
+	bottom:0px;
+	right:0;
+}
+
+        .search-table {
+            margin-left: 35px;
+        }
+        .slideTxtBox .hd1 ul li.on {
+            border-top: 2px solid {$banner.color};
+            color: {$banner.color};
+        }
+        .slideTxtBox .hd1 ul li.on a{
+            color: {$banner.color};
+        }
+        .con4L_1L .hd ul li.on{
+            border-top: 2px solid {$banner.color};
+            color: {$banner.color};
+        }
+        .con4L_1L .hd ul li.on a{
+           
+            color: {$banner.color};
+        }
+        .con4L_1R .hd ul li.on{
+            border-top: 2px solid {$banner.color};
+            color: {$banner.color};
+        }
+        .con4L_1R .hd ul li.on a{
+            color: {$banner.color};
+        }
+        
+        .baosong .hd ul li.on{
+            border-top: 2px solid {$banner.color};
+            color: {$banner.color};
+        }
+        .baosong .hd ul li.on a{
+            
+            color: {$banner.color};
+        }
+        .con4L_3 .hd ul li.on{
+            border-top: 2px solid {$banner.color};
+            color: {$banner.color};
+        }
+        .con4L_3 .hd ul li.on a{
+            
+            color: {$banner.color};
+        }
+    </style>
+    <script LANGUAGE="javascript">
+        function check() {
+            if (document.search.p.value.length == 0) {
+                alert("请正确输入关键字!");
+                document.search.p.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body {if condition="$other['qstatus'] eq 1"} class="discolorClass" {/if} >
+<!--top-->
+        {include file="public:top"}
+    <!--head-->
+    <div class="slideTxtBox">
+
+        {include file="public:nav"}
+
+        <div class="bd">
+
+            <ul style="border:none;">
+
+                <div class="wrapper con1">
+
+                    <div class="weather">
+
+                        <p>
+
+                            <script language="javascript" type="text/javascript">
+                                today = new Date();
+                                document.write(today.getFullYear(), "年", "", today.getMonth() + 1, "月", "", today.getDate(), "日");
+                            </script>
+                            <b>周口:</b>
+                        </p>
+                        <div class="innerWeather">
+                        
+                        <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=11&py=zhoukou&site=12" 
+
+width="300" height="15" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+                    </div>
+                    </div>
+                    <div class="search">
+                        <form>
+                            <table border="0" cellspacing="0" cellpadding="0" class="search-table">
+                                <tr>
+                                    <td width="50"><input type="text" id="keyword" name="keyword" class="bor1"></td>
+                                    <td width="75"><a href="#" onclick="go_search();"><img src="__HOME__/images/searchin.jpg" />
+                                         <!-- @*<input name="input" type="image" src="__HOME__/images/searchin.jpg" alt="检索" width="75" height="31" />*@ -->
+                                        </a></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                    <script>
+                     function go_search()
+                     {
+                         var keywords=$("#keyword").val();
+                         location.href="{:url('Index/serach')}?keywords="+keywords;
+                     }
+                    </script>
+                </div>
+                <!--con1-->
+                <div class="wrapper con2">
+                    <div class="con2_l">
+                        <!--<script type="text/javascript">
+                            //设置
+                            myFocus.set({
+                                id: 'myFocus', //ID
+                                pattern: 'mF_expo2010' //风格
+                            });
+                        </script>-->
+                        <div id="myFocus">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                   {volist name="reb" id="vb"}
+                                        <div class="swiper-slide">
+                                            <img src="{$host}/uploads/{$vb.coverimage}" alt="" />
+                                            <p><a href="{:url('News/detail',array('nid'=>$vb['id']))}">{$vb.title}</a></p>
+                                        </div>
+                                    {/volist}
+                               
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                                <!-- Add Arrows -->
+                                <!--<div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--con3_l1_l焦点图结束-->
+                    <!--con2_l-->
+                    <script src="__HOME__/js/swiper.min.js"></script>
+                    <script>
+                        var swiper = new Swiper('.swiper-container', {
+                            pagination: '.swiper-pagination',
+                            nextButton: '.swiper-button-next',
+                            prevButton: '.swiper-button-prev',
+                            paginationClickable: true,
+                            spaceBetween: 30,
+                            centeredSlides: true,
+                            autoplay: 2500,
+                            autoplayDisableOnInteraction: false
+                        });
+                    </script>
+                    <div class="con2_m">
+                        <div class="hd1">
+                            <ul>
+                               
+                                  {volist name="res" id="vs"}
+                                     {if condition="$vs['name'] eq '周口要闻'"}
+                                            <li >
+                                                <a href="{$host}/Index/News/index/code/zkyw" target="_blank" class="a">{$vs['name']}</a>
+                                            </li>
+                                          
+                                             {else /}
+                                            <li >
+                                                <a href="{:url('News/index',array('id'=>$vs['id']))}" target="_blank" class="a">{$vs['name']}</a>
+                                            </li>
+                                       {/if}     
+                                  {/volist}
+
+                                <!-- @*@if (ViewBag.kuai1 != null)
+                                    {
+                                        foreach (var item in ViewBag.kuai1)
+                                        {
+                                            <li>
+                                                <a href="@(item.CategoryUrl)@item.Id" target="_blank" class="a">@item.Name</a>
+                                            </li>
+                                        }
+
+                                    }*@
+                                    @*<li>
+                                            <a href="/Home/NewsList?code=jyxx" target="_blank" class="a">教育信息</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Home/NewsList?code=sjgg" target="_blank" class="a">市局公告</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Home/NewsList?code=zkyw" target="_blank" class="a">周口要闻</a>
+                                        </li>*@ -->
+                                </ul>
+                            </div>
+                            <div class="bd1">
+                                {volist name="res" id="vss"}
+                                    <ul class="lb01">
+                                     {if condition="$vss['name'] eq '周口要闻'"}
+                                            {volist name="$vss['list']" id="vl"}
+                                                <li>
+                                                    <a href="{$host}/Index/News/detail/nid/{$vl.id}" target="_blank"  title="{$vl.title}">{$vl.title}</a><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                </li>
+
+                                             {/volist}
+                                        {else /}
+                                        {volist name="$vss['list1']" id="v1"}
+                                                <li>
+                                                    <a href="{:url('News/detail',array('nid'=>$v1['id']))}" title="{$v1.title}">{$v1.title}</a><span>{$v1.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                </li>
+                                                {/volist}
+                                        
+                                      {/if}
+
+
+                                    </ul>
+                                     {/volist}       
+                                <!-- @*<ul class="lb01">
+
+
+                                        @foreach (var item in ViewBag.jyxx)
+                                        {
+                                            <li>
+                                                <a href="/Home/News?Id=@item.Id" title="@item.Title">@item.Title</a><span>@Html.FormatValue(item.CreateTime, "{0:yyyy-MM-dd}")</span>
+                                            </li>
+
+                                        }
+
+
+                                    </ul>
+
+                                    <ul class="lb01">
+                                        @foreach (var item in ViewBag.sjgg)
+                                        {
+                                            <li>
+                                                <a href="/Home/News?Id=@item.Id" title="@item.Title">@item.Title</a><span>@Html.FormatValue(item.CreateTime, "{0:yyyy-MM-dd}")</span>
+                                            </li>
+
+                                        }
+
+                                    </ul>
+                                    <ul class="lb01">
+                                        @foreach (var item in ViewBag.zkyw_zkyw)
+                                        {
+                                            <li>
+                                                <a href="/Home/News?Id=@item.Id" title="@item.Title">@item.Title</a><span>@Html.FormatValue(item.CreateTime, "{0:yyyy-MM-dd}")</span>
+                                            </li>
+
+                                        }
+
+                                    </ul>*@ -->
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(".con2_m").slide({
+                                titCell: ".hd1 ul li",
+                                mainCell: ".bd1",
+                                trigger: "mouseover",
+                                autoPlay: false,
+                                pnLoop: false
+                            });
+                        </script>
+                        <!--con2_m-->
+                        <div class="con2_r">
+                            <a href="">
+                                <img src="{$host}/uploads/{$banner.tong_image}" width="138" height="31" />
+                            </a>
+                            <div class="tjlm">
+                                <MARQUEE id=weather onmouseover=weather.stop() onmouseout=weather.start() scrollAmount=3 width="100%" height="220" direction="up" style="padding:5px;font-size:12px;line-height:25px;">
+                                    <ul class="toplist">
+                                             {volist name="res7" id="v7"}
+                                                <li>
+                                                    <a href="{:url('News/detail',array('nid'=>$v['id']))}" title="{$v7.title}">{$v7.title}</a><span>{$v7.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                </li>
+                                          {/volist}
+                                   
+
+                                    </ul>
+                                </MARQUEE>
+                            </div>
+                            <!--<a target="_blank" href="http://wsxfdt.hnxf.gov.cn/sy/initPlatform.action">
+                                <img src="/images/xfdt.png" style="margin-top:10px;margin-left:4px;">
+                            </a>-->
+                        </div>
+                        <!--con2_r-->
+                        <div class="clear"></div>
+                    </div>
+                    <!--首页top-->
+                </ul>
+                <!--子站删除部分开始-->
+                <!--子站删除部分结束-->
+
+            </div>
+
+        </div>
+        <script type="text/javascript">
+                            jQuery(".slideTxtBox").slide({
+                                returnDefault: true,
+                                effect: "fade",
+                                easing: "linear",
+                                delayTime: 1
+                            });
+        </script>
+        <!--nav-->
+        <div class="wrapper con3">
+            <img src="{$host}/uploads/{$banner.min_image}">
+        </div>
+        <!--con3-->
+        <div class="wrapper con4">
+            <div class="con4L">
+                <div class="con4L_1">
+                    <div class="con4L_1L">
+
+                        <div class="hd">
+                            
+
+                            <ul>
+
+                                    {volist name="res2" id="vs"}
+                                    {if condition="$vs['name'] eq '周口要闻'"}
+                                           <li>
+                                               <a href="{$host}/Index/News/index/code/zkyw" target="_blank" class="a">{$vs['name']}</a>
+                                           </li>
+                                      {else /}
+                                           <li>
+                                               <a href="{:url('News/index',array('id'=>$vs['id']))}" target="_blank" class="a">{$vs['name']}</a>
+                                           </li>
+                                      {/if}     
+                                 {/volist}
+
+
+
+                                </ul>
+                            </div>
+
+                            <div class="bd">
+                                    {volist name="res2" id="vss"}
+                                    <ul class="lb02">
+                                     {if condition="$vss['name'] eq '周口要闻'"}
+                                            {volist name="$vss['list']" id="vl"}
+                                                <li>
+                                                    <a href="{$host}/Index/News/detail/nid/{$vl.id}" target="_blank"  title="{$vl.title}">{$vl.title}</a><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                </li>
+
+                                             {/volist}
+                                        {else /}
+                                        {volist name="$vss['list1']" id="v1"}
+                                                <li>
+                                                    <a href="{:url('News/detail',array('nid'=>$v1['id']))}" title="{$v1.title}">{$v1.title}</a><span>{$v1.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                </li>
+                                                {/volist}
+                                        
+                                      {/if}
+
+
+                                    </ul>
+                                     {/volist}  
+                              
+
+                            </div>
+
+                        </div>
+
+                        <script type="text/javascript">
+                            jQuery(".con4L_1L").slide();
+                        </script>
+                        <div class="con4L_1R">
+                            <div class="hd">
+                                <ul>
+                                        {volist name="res3" id="vs"}
+                                        {if condition="$vs['name'] eq '周口要闻'"}
+                                               <li>
+                                                   <a href="{$host}/Index/News/index/code/zkyw" target="_blank" class="a">{$vs['name']}</a>
+                                               </li>
+                                          {else /}
+                                               <li>
+                                                   <a href="{:url('News/index',array('id'=>$vs['id']))}" target="_blank" class="a">{$vs['name']}</a>
+                                               </li>
+                                          {/if}     
+                                     {/volist}
+                                    </ul>
+                                </div>
+                                <div class="bd">
+                                        {volist name="res3" id="vss"}
+                                        <ul class="lb02">
+                                         {if condition="$vss['name'] eq '周口要闻'"}
+                                                {volist name="$vss['list']" id="vl"}
+                                                    <li>
+                                                        <a href="{$host}/Index/News/detail/nid/{$vl.id}" target="_blank"  title="{$vl.title}">{$vl.title}</a><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                    </li>
+    
+                                                 {/volist}
+                                            {else /}
+                                            {volist name="$vss['list1']" id="v1"}
+                                                    <li>
+                                                        <a href="{:url('News/detail',array('nid'=>$v1['id']))}" title="{$v1.title}">{$v1.title}</a><span>{$v1.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                    </li>
+                                                    {/volist}
+                                            
+                                          {/if}
+    
+    
+                                        </ul>
+                                         {/volist}  
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(".con4L_1R").slide();
+                        </script>
+                        <!--con4L_1-->
+                        <!--con4L_2-->
+                        <div class="con4L_3">
+                            <div class="hd">
+                                <ul>
+                                        {volist name="res5" id="vs"}
+                                        
+                                               <li>
+                                                   <a href="{:url('News/index',array('id'=>$vs['id']))}" target="_blank" class="a">{$vs['name']}</a>
+                                               </li>
+                                             
+                                     {/volist}
+
+                                </ul>
+                            </div>
+                            <div class="bd">
+                                    {volist name="res5" id="vs"}
+                                <ul>
+                                        {volist name="vs['list1']" id="vss" key="k" offset="0" length="1"}
+                                           
+                                                <div class="con4L_3dL">
+
+                                                    <a href="{:url('News/detail',array('nid'=>$vss['id']))}"><img src="{$host}/uploads/{$vss.coverimage}" width="290" height="200"></a>
+                                                </div>
+                                                {/volist}    
+                                           <div class='con4L_3dR'><ul class='lb04' style='margin-top:10px;'><dl class='products'>
+
+                                                {volist name="vs['list1']" id="vss" key="k" offset="1" length="6"}
+                                               
+                                                <dt>
+                                                    <a href="{:url('News/detail',array('nid'=>$vss['id']))}">
+                                                       
+                                                        <img src="{$host}/uploads/{$vss.coverimage}" width="130" height="95">
+                                                    </a>
+                                                </dt>
+                                                {/volist}   
+
+                                    </dl></ul ></div> 
+                                 
+
+                                   
+
+                                    <div class="clear"></div>
+                                </ul>
+
+                                {/volist}
+
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(".con4L_3").slide();
+                        </script>
+                        <!--con4L_3-->
+                    </div>
+                    <!--con4_L-->
+                    <div class="con4R">
+                        <!--con4R_top-->
+                        <div class="baosong">
+                            <div class="hd">
+                                <ul>
+                                        {volist name="res4" id="vs"}
+                                        {if condition="$vs['name'] eq '周口要闻'"}
+                                               <li>
+                                                   <a href="{$host}/Index/News/index/code/zkyw" target="_blank" class="a">{$vs['name']}</a>
+                                               </li>
+                                          {else /}
+                                               <li>
+                                                   <a href="{:url('News/index',array('id'=>$vs['id']))}" target="_blank" class="a">{$vs['name']}</a>
+                                               </li>
+                                          {/if}     
+                                     {/volist}
+                                    </ul>
+                                </div>
+
+                                <div class="bd">
+                                        {volist name="res4" id="vss"}
+                                        <ul class="lb06">
+                                         {if condition="$vss['name'] eq '周口要闻'"}
+                                                {volist name="$vss['list']" id="vl"}
+                                                    <li>
+                                                        <a href="{$host}/Index/News/detail/nid/{$vl.id}" target="_blank"  title="{$vl.title}">{$vl.title}</a><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                    </li>
+    
+                                                 {/volist}
+                                            {else /}
+                                            {volist name="$vss['list1']" id="v1"}
+                                                    <li>
+                                                        <a href="{:url('News/detail',array('nid'=>$v1['id']))}" title="{$v1.title}">{$v1.title}</a><span>{$v1.createtime|mb_substr=0,10,'utf-8'}</span>
+                                                    </li>
+                                                    {/volist}
+                                            
+                                          {/if}
+    
+    
+                                        </ul>
+                                         {/volist}  
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                jQuery(".baosong").slide();
+                            </script>
+                            <!--便民服务-->
+                            <div class="baosong" style="border: 0px solid #cfcfcf;border-top:none;width:245px; height:290px;margin-top:15px;">
+                                <div class="hd">
+                                    <ul>
+                                            {volist name="res6" id="vs"}
+                                            {if condition="$vs['name'] eq '周口要闻'"}
+                                                   <li>
+                                                       <a href="{$host}/Index/News/index/code/zkyw" target="_blank" class="a">{$vs['name']}</a>
+                                                   </li>
+                                              {else /}
+                                                   <li>
+                                                       <a href="{:url('News/index',array('id'=>$vs['id']))}" target="_blank" class="a">{$vs['name']}</a>
+                                                   </li>
+                                              {/if}     
+                                         {/volist}
+                                        </ul>
+                                    </div>
+                                    <div class="bd">
+                                        <div align="center">
+                                                <table border="0" width="100%" id="table1" style="margin:15px 0;">
+                                                    <tr>
+                                                        <td align="center" height="80" width="60">
+                                                            <a target="_blank" href="http://www.weather.com.cn/weather1d/101181404.shtml"><img src="__HOME__/images/server_03.jpg"></a>
+                                                        </td>
+
+                                                        <td align="center" width="60">
+                                                            <a target="_blank" href="http://www.airchina.com.cn/"><img src="__HOME__/images/server_05.jpg"></a>
+                                                        </td>
+
+                                                        <td align="center" width="60">
+                                                            <a target="_blank" href="http://www.12306.cn/mormhweb/"><img src="__HOME__/images/server_07.jpg"></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" height="80" width="60">
+                                                            <a target="_blank" href="http://map.baidu.com/"><img src="__HOME__/images/server_09.jpg"></a>
+                                                        </td>
+                                                        <td align="center" width="60">
+                                                            <a target="_blank" href="http://www.showji.com/"><img src="__HOME__/images/server_15.jpg"></a>
+                                                        </td>
+                                                        <td align="center" width="60">
+                                                            <a target="_blank" href="http://www.ip138.com/post/"><img src="__HOME__/images/server_16.jpg"></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" height="80" width="60">
+                                                            <a target="_blank" href="http://www.ip138.com/post/"><img src="__HOME__/images/server_17.jpg"></a>
+                                                        </td>
+                                                        <td align="center" width="60">
+                                                            <a target="_blank" href="http://qq.ip138.com/day/"><img src="__HOME__/images/server_18.jpg"></a>
+                                                        </td>
+                                                        <td align="center" width="60">
+                                                            <a target="_blank" href="http://xinxiang.hyxfj.gov.cn/?SortId=8&Type=index"><img src="__HOME__/images/server_xf.jpg"></a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--con4_R-->
+                            <div class="clear"></div>
+
+                        </div>
+                        <!--底部版权-->
+
+                        {include file="public:footer"}
+                     
+
+                        <!--版权结束-->
+                    </body>
+
+                </html>

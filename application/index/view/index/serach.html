@@ -1,0 +1,97 @@
+﻿      <!DOCTYPE html>
+        <html>
+        <head>
+        
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="Keywords" content="" />
+            <meta name="Description" content="" />
+            <title>{$sites.sitename}门户网站-搜索结果</title>
+            <link href="__HOME__/css/base.css" rel="stylesheet" type="text/css" />
+            <link rel="stylesheet" href="__HOME__/css/hngov.css" type="text/css" />
+            <link href="__HOME__/css/public.css" rel="stylesheet" type="text/css" />
+        
+            <link href="__HOME__/css/artlist.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/artshow.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/pages.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/pager.css" rel="stylesheet" />
+            <!-- <script>
+                var webroot = "/",
+                    murl = "list.asp?classid=1";
+            </script> -->
+        
+            <script src="__HOME__/js/jquery.js"></script>
+        
+        
+        
+            <script src="__HOME__/js/base.js"></script>
+        
+
+        
+            <script src="__HOME__/js/zh_CN.js"></script>
+        
+            <script src="__HOME__/js/sdcms.js"></script>
+        
+            <script src="__HOME__/js/main.js"></script>
+        
+        
+            <!-- @RenderSection("styles", required: false) -->
+        </head>
+        <body>
+        
+                <div class="wrapper wrapTop">
+                       
+                    {include file="public:top"}
+                       </div>
+                   
+                   {include file="public:navs"}
+                   
+        
+                   <div id="position">
+                        您所在的位置：
+                        <a href="/Home/Index">首页</a> >
+                        <a href="#" title="搜索结果" class="CurrChnlCls">搜索结果</a>
+                    </div>
+                    
+                    <div class="w980 mt10 mc" id="container" style="box-sizing: content-box;">
+                    
+                        <div class="w610 b" style="width:auto;padding-bottom:50px;">
+                    
+                            <div class="title">搜索结果</div>
+                    
+                           
+                    
+                               
+                                    <ul class="newslist">
+                    
+                                        {volist name="list" id="v"}
+                                            <li>
+                                                <a href="{:url('News/detail',array('nid'=>$v['id']))}" title="{$v.title}" target="_blank">{$v.title}</a><span class="newsTime">{$v.createtime|mb_substr=0,10,'utf-8'}</span>
+                                            </li>
+                                        {/volist}
+                    
+                    
+                                    </ul>
+                               {empty name="list"}
+                                    <p>没有找到您要搜索的内容</p>
+                                {/empty}
+                           
+                        </div>
+                        
+                    
+                    
+                    
+                    
+                    
+                        
+                    
+                        <div class="c mt10 list_page" style="float:right">
+                            
+                         {$page}
+                        </div>
+                    </div>
+         
+            {include file="public:footer"}
+          
+        </body>
+        </html>
+        

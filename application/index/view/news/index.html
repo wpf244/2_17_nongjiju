@@ -1,0 +1,124 @@
+﻿      <!DOCTYPE html>
+        <html>
+        <head>
+        
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="Keywords" content="" />
+            <meta name="Description" content="" />
+            <title>{$sites.sitename}门户网站-{$re.name}</title>
+            <link href="__HOME__/css/base.css" rel="stylesheet" type="text/css" />
+            <link rel="stylesheet" href="__HOME__/css/hngov.css" type="text/css" />
+            <link href="__HOME__/css/public.css" rel="stylesheet" type="text/css" />
+        
+            <link href="__HOME__/css/artlist.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/artshow.css" rel="stylesheet" type="text/css" />
+            <link href="__HOME__/css/pages.css" rel="stylesheet" type="text/css" />
+            <!-- <script>
+                var webroot = "/",
+                    murl = "list.asp?classid=1";
+            </script> -->
+        
+            <script src="__HOME__/js/jquery.js"></script>
+        
+            <!-- <script src="__HOME__/js/jquery.tips.js"></script> -->
+        
+            <script src="__HOME__/js/base.js"></script>
+        
+            <!-- <script src="__HOME__/js/jquery.validator.js"></script> -->
+        
+            <script src="__HOME__/js/zh_CN.js"></script>
+        
+            <script src="__HOME__/js/sdcms.js"></script>
+        
+            <script src="__HOME__/js/main.js"></script>
+        
+        
+            <!-- @RenderSection("styles", required: false) -->
+        </head>
+        <body>
+        
+                <div class="wrapper wrapTop">
+                       
+                    {include file="public:top"}
+                       </div>
+                   
+                       {include file="public:navs"}
+                   
+        
+                   <div id="position">
+                        您所在的位置：
+                        <a href="{:url('Index/index')}">首页</a> >
+                      
+                        <a href="{:url('News/index',array('id'=>$re['id']))}" title="{$re.name}">{$re.name}</a>
+                    </div>
+                    
+                    <div class="w980 mt10 mc" id="container" style="box-sizing: content-box;">
+                    
+                        <div class="right">
+                    
+                            <div class="w610" style="width:auto;padding-bottom:50px;">
+                    
+                                <div class="title">{$re.name}</div>
+                    
+                                <ul class="newslist">
+                    
+                                   {volist name="list" id="vl"}
+                                        
+                                            <li class="ui-navTree-subitem"><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span><a href="{:url('News/detail',array('nid'=>$vl['id']))}">{$vl.title} {if condition="$vl.arttype eq 'lingdao'"}{$v.subtitle}{/if}</a></li>
+                                  {/volist}
+                                   
+                                    
+                    
+                                       
+                    
+                                </ul>
+                    
+                                <div class="c mt10 list_page" style="float:right">
+                                    {$page}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left">
+                    
+                            <div class="b">
+                    
+                                <div class="subject">栏目类别</div>
+                    
+                                <ul class="topcate">
+                                   {volist name="res" id="vs"}
+                                        <li class="hover" style="background:{$banner.color} url(__HOME__/images/ico_arr.gif) no-repeat top left;">
+                                            {if condition="$vs['categoryurl'] neq '' "}
+                                            
+                                            <a href="{$vs.categoryurl}">{$vs.name}</a>
+                                            {elseif condition="$vs['name'] eq '周口要闻' "}
+                                          
+                                           
+                                             <a href="{$host}/Index/News/index/code/zkyw" target="_blank" class="a">{$vs.name}</a>
+                                           
+                                            {else /}
+                                                <a href="{:url('News/index',array('id'=>$vs['id']))}">{$vs.name}</a>
+                                           {/if}
+                                        </li>
+                                    {/volist}
+                                <style>
+                                .topcate li a:hover{
+                                    color: #fff;
+                                    background:{$banner.colors} url(__HOME__/images/ico_arr.gif) no-repeat top left;
+                                }
+                                </style>
+                    
+                                </ul>
+                    
+                            </div>
+                    
+                            
+                    
+                        </div>
+                    
+                    </div>
+        
+            {include file="public:footer"}
+          
+        </body>
+        </html>
+        

@@ -1,0 +1,12 @@
+.title{font-size:14px;border-bottom:0px solid #f0f0f0;line-height:30px;height:30px;margin:0 0 15px 0;border:0px solid #ddd;}
+.title a{font-size:12px;font-weight:normal;}
+.newslist{margin:0;padding:0;list-style:none;}
+.newslist li{line-height:30px;height:30px;font-size:14px;font-family:宋体;clear:both;}
+.newslist .intro{font-size:12px;color:#999;line-height:22px;padding:0 0 20px 0;}
+.newslist .mid{line-height:15px;height:15px;overflow:hidden;}
+.newslist li span{float:right;color:#999;font-family:verdana;font-size:12px;}
+
+.pagecontent{word-break:break-all;line-height:22px;}
+.pagecontent p{margin:15px 0;font-size:14px;}
+
+.newslist li a{	display:inline-block;	width: 426px;    white-space: nowrap;    overflow: hidden;    text-overflow: ellipsis;}
