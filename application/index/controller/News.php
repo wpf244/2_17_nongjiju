@@ -22,7 +22,7 @@ class News extends BaseHome
              $arr[]=$vs['id']; 
             }
             $list=db("article_category")->alias("a")->field("a.categoryid as categoryids ,articleid,b.id,title,createtime,reviewstatus,createtime,subtitle,arttype")->where(['reviewstatus'=>1,"a.categoryid"=>["in",$arr]])->join("article_info b","a.articleid=b.id")->order("createtime desc")->paginate(20);
-           
+          //  var_dump($res);
             $page=$list->render();
         }else{
             $res=db("category_info")->where(["siteid"=>$siteid,"status"=>0,"parentid"=>$re['parentid']])->order("orderid desc")->select();
@@ -31,6 +31,7 @@ class News extends BaseHome
            
             $page=$list->render();
         }
+        
 
         $this->assign("res",$res);
         $this->assign("list",$list);

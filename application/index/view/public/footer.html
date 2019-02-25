@@ -94,8 +94,19 @@
 </div>
 
 {if condition="$other.pstatus eq 1"}
-                        
-<div id="fixed" style="background-image:url(/uploads/{$other.pimage}" onclick="location.href='{$other.purl}'">
-
+<!-- style="background-image:url({$host}/uploads/{$other.pimage}" onclick="location.href='{$other.purl}'"        -->
+<div id="fixed">
+<a href="{$other.purl}"><img src="{$host}/uploads/{$other.pimage}" alt=""></a>
 </div>
+<style>
+#fixed {
+    position: fixed;
+    right: {$other.pright}px;
+    bottom: {$other.pfooter}px;
+}
+#fixed a {
+    display: block;
+    height: 100%;
+}
+</style>
 {/if}

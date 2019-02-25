@@ -64,7 +64,7 @@
                     
                                    {volist name="list" id="vl"}
                                         
-                                            <li class="ui-navTree-subitem"><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span><a href="{:url('News/detail',array('nid'=>$vl['id']))}">{$vl.title} {if condition="$vl.arttype eq 'lingdao'"}{$v.subtitle}{/if}</a></li>
+                                            <li class="ui-navTree-subitem"><span>{$vl.createtime|mb_substr=0,10,'utf-8'}</span><a href="{:url('News/detail',array('nid'=>$vl['id']))}">{$vl.title} {if condition="$vl.arttype eq 'lingdao'"}{$vl.subtitle}{/if}</a></li>
                                   {/volist}
                                    
                                     
@@ -82,7 +82,7 @@
                     
                             <div class="b">
                     
-                                <div class="subject">栏目类别</div>
+                                <div class="subject" style="color:{$banner.color}">栏目类别</div>
                     
                                 <ul class="topcate">
                                    {volist name="res" id="vs"}

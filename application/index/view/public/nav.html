@@ -4,17 +4,24 @@
      
             {if condition="$k eq 1"}
             
-                <li class="tab{$k}">
-                    <a style="width:100%;" href="{:url('Index/index')}">{$v.name}</a>
+                <li class="tab{$k}" style="width: {$bl}%">
+                    <a href="{:url('Index/index')}">{$v.name}</a>
                 </li>
                 {elseif condition="$v['name'] eq '互动交流' " }
-                <li>
-                     <a style="width:100%;" href="{:url('News/msg')}" target="_blank" class="a">{$v['name']}</a>
+                <li style="width: {$bl}%">
+                     <a href="{:url('News/msg')}" target="_blank" class="a">{$v['name']}</a>
                  </li>
+
+                 {elseif condition="$v['name'] eq '网上办事' " }
+                <li style="width: {$bl}%">
+                     <a href="http://zwfw.hazhoukou.gov.cn/web/index.html" target="_blank" class="a">{$v['name']}</a>
+                 </li>
+
+                 
             {else /}
             
-                <li class="tab{$k}">
-                    <a style="width:100%;" href="{:url('News/index',array('id'=>$v['id']))}" >{$v.name}</a>
+                <li class="tab{$k}" style="width: {$bl}%">
+                    <a href="{:url('News/index',array('id'=>$v['id']))}" >{$v.name}</a>
                 </li>
             {/if}
 
@@ -27,4 +34,8 @@
         .menu li a:hover{
            background: {$banner.colors}
         }
+        .tablist li a:hover{
+            background: {$banner.colors}
+        }
         </style>
+

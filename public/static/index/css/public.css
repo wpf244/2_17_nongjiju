@@ -296,19 +296,18 @@ a:hover {
 	width: 1000px;
 	text-align:center;
 	list-style-type:none;
-	display: -webkit-box;
+	/* display: -webkit-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-box-pack: space-around;
 	-ms-flex-pack: space-around;
 	-webkit-justify-content: space-around;
-	justify-content: space-around;
+	justify-content: space-around; */
 }
 
 .menu li {
 	float: left;
-	width: auto;
 	overflow: hidden;
 	font-family: 微软雅黑;
 }
@@ -318,10 +317,6 @@ a:hover {
 	height: 43px;
 	display: block;
 	float: left;
-}
-
-.menu .menu_item {
-	flex: 1;
 }
 
 .menu li a {

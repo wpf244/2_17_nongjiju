@@ -8,7 +8,7 @@ class BaseHome extends Controller
 {
     public function _initialize()
     {
-        session("siteid",16);
+        session("siteid",37);
 
         $host="http://221.14.138.77:8001";
         $this->assign("host",$host);
@@ -25,12 +25,18 @@ class BaseHome extends Controller
 
         $other=db("other")->where("siteid=$siteid")->find();
         $this->assign("other",$other);
+       
 
         $banner=db("banner")->where("siteid",$siteid)->find();
         $this->assign("banner",$banner);
 
         $site=db("category_info")->where(["siteid"=>$siteid,"status"=>0,"level"=>0])->order("orderid desc")->select();
         $this->assign("site",$site);
+
+        $cou=count($site);
+        $bl=(100/$cou);
+        
+        $this->assign("bl",$bl);
        
        
     }
